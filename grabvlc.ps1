@@ -18,9 +18,11 @@ Invoke-WebRequest -Uri $fileloc -OutFile $destination
 #silently run the installer
 & $destination /L=1033 /S
 
-#create shortcut on the desktop
-$shortcutpath = "C:\users\$ENV:USERNAME\Desktop"
-$shellcmd = New-Object -ComObject WScript.Shell
-$shortcut = $shellcmd.CreateShortcut($shortcutpath)
-$shortcut.TargetPath = "C:\Program Files (x86)\VideoLAN\VLC\vlc.exe"
-$shortcut.Save()
+# in this occurance, VLC auto creates a desktop shortcut however if this application did not, this is how you would
+
+#$shortcutfileloc = "C:\Program Files (x86)\VideoLAN\VLC\vlc.exe"
+#$shortcutpath = "C:\Users\Public\Desktop\VLC Media Player.lnk"
+#$shellcmd = New-Object -ComObject WScript.Shell
+#$shortcut = $shellcmd.CreateShortcut($shortcutpath)
+#$shortcut.TargetPath = $shortcutpath
+#$shortcut.Save()
