@@ -1,0 +1,1 @@
+﻿Get-ADComputer -LDAPFilter "(name=STWS*)" -Property * -SearchBase "OU=" | Sort LastLogonDate | FT Name, LastLogonDate -Autosize | Out-File C:\users\w0294101\Desktop\test3.csv
